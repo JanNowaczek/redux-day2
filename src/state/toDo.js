@@ -1,4 +1,7 @@
+import uuidv1 from 'uuid/v1'
+
 const ADD = 'toDo/ADD'
+
 
 export const addActionCreator = (newTaskText) => ({
     type: ADD, 
@@ -14,7 +17,10 @@ export default (state = initialState, action) => {
         case ADD:
         return{
             ...state,
-            tasks: state.tasks.concat(action.newTaskText)
+            tasks: state.tasks.concat({
+                text: action.newTaskText,
+                key: uuidv1(),
+            })
         }
 
         default:
