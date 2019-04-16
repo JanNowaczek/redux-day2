@@ -28,7 +28,11 @@ export default (state = initialState, action) => {
                 key: uuidv1(),
             })
         }
-
+        case DELETE:
+        return{
+            ...state,
+            tasks: state.tasks.filter((task) => task.key !== action.task.Key)
+        }
         default:
             return state
     }
