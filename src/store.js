@@ -11,5 +11,5 @@ export const store = createStore(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
-store.dispatch(incActionCreator())
-store.dispatch(decActionCreator())
+window.inc = () => store.dispatch(incActionCreator())
+window.dec = () => store.dispatch(decActionCreator())
