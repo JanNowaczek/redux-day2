@@ -3,7 +3,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { incActionCreator } from './state/counter'
 
-
 const Counter = (props) => (
     <div>
         <h1>
